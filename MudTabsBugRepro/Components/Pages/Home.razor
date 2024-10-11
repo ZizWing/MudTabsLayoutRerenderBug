@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
+    <MudGrid>
+        <MudItem xs="12">
+            <MudTabs>
+                <MudTabPanel Text="One"/>
+                <MudTabPanel Text="Two"/>
+                <MudTabPanel Text="Three"/>
+            </MudTabs>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
+@code {
+
+    [CascadingParameter] private MainLayout Layout { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Layout.LayoutStateHasChanged();
+    }
+    
+}
